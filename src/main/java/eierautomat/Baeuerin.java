@@ -7,7 +7,6 @@ import pi.Text;
 
 class Baeuerin extends Thread
 {
-
     Random zufallsgenerator;
 
     int anzahlVersuche;

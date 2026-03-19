@@ -7,18 +7,21 @@ class Landleben extends Scene
 {
     Landleben()
     {
-        Eierautomat automat = new Eierautomat(this);
-        // Eierautomat automat = new BessererEierautomat(this);
-        Baeuerin baeuerin = new Baeuerin(this, automat);
-        Leo leo = new Leo(this, automat);
-        baeuerin.start();
-        leo.start();
+        // Objekt der Klasse Eierautomat erstellen:
+
+        // Objekt der Klasse Baeuerin erzeugen:
+
+        // Objekt der Klasse Leo erzeugen:
+
+        // Die Klassen, die von Threads erben, starten:
     }
 
     public static void main(String[] args)
     {
         Controller.instantMode(false);
-        // Ein Objekt der Klasse Landleben erzeugen und als Parameter der Methode Controller.start() übergeben.
+        // Ein Objekt der Klasse Landleben erzeugen und als Parameter der
+        // Methode Controller.start() übergeben:
+
         // Controller.start();
     }
 }

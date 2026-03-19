@@ -34,21 +34,16 @@ class BessererEierautomat extends Eierautomat
     @Override
     synchronized Eierkarton holeEier()
     {
-        // Wenn eine bestimmte Bedingung gilt, müssen Abholer abwarten
-        // --- HIER PROGRAMMCODE ERGÄNZEN
-        // --- HINWEIS: Die Bedingung um die folgenden Anweisungen könnte dann
-        // entfernt werden,
-        // --- ebenso die Rückgabe der leeren Referenz.
+        // Wenn eine bestimmte Bedingung gilt, müssen Abholer abwarten.
+        // Die Bedingung um die folgenden Anweisungen könnte dann
+        // entfernt werden, ebenso die Rückgabe der leeren Referenz:
 
         if (eierkartons.size() > 0)
         {
-            // Ein Eierkarton wird aus dem Feld entfernt und seine Darstellung
-            // aus dem Zeichenfenster
             Eierkarton gekaufterKarton = entferneEierkarton();
 
             // Unter einer bestimmten Bedingung muss die Bäuerin informiert
-            // werden
-            // --- HIER PROGRAMMCODE ERGÄNZEN
+            // werden:
 
             return gekaufterKarton;
         }
