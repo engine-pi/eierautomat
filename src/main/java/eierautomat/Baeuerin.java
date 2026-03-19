@@ -5,21 +5,16 @@ import java.util.Random;
 import pi.Scene;
 import pi.Text;
 
-
 class Baeuerin extends Thread
 {
 
     Random zufallsgenerator;
 
-
     int anzahlVersuche;
-
 
     Text text;
 
-
     Eierautomat automat;
-
 
     Baeuerin(Scene scene, Eierautomat eierautomat)
     {

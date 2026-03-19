@@ -4,7 +4,6 @@ import pi.Scene;
 
 class BessererEierautomat extends Eierautomat
 {
-
     BessererEierautomat(Scene scene)
     {
         super(scene);
@@ -29,15 +28,12 @@ class BessererEierautomat extends Eierautomat
             fügeEierkartonHinzu(i);
         }
 
-
         notify();
     }
-
 
     @Override
     synchronized Eierkarton holeEier()
     {
-
         // Wenn eine bestimmte Bedingung gilt, müssen Abholer abwarten
         // --- HIER PROGRAMMCODE ERGÄNZEN
         // --- HINWEIS: Die Bedingung um die folgenden Anweisungen könnte dann
@@ -48,7 +44,7 @@ class BessererEierautomat extends Eierautomat
         {
             // Ein Eierkarton wird aus dem Feld entfernt und seine Darstellung
             // aus dem Zeichenfenster
-             Eierkarton gekaufterKarton = entferneEierkarton();
+            Eierkarton gekaufterKarton = entferneEierkarton();
 
             // Unter einer bestimmten Bedingung muss die Bäuerin informiert
             // werden
@@ -57,9 +53,6 @@ class BessererEierautomat extends Eierautomat
             return gekaufterKarton;
         }
         return null;
-
-
-
 
     }
 }

@@ -5,14 +5,11 @@ import java.util.ArrayList;
 import pi.Rectangle;
 import pi.Scene;
 
-
 class Eierautomat
 {
-
     protected ArrayList<Eierkarton> eierkartons;
 
     Scene scene;
-
 
     Eierautomat(Scene scene)
     {
@@ -33,7 +30,6 @@ class Eierautomat
         eierkartons.add(eierkarton);
     }
 
-
     protected Eierkarton entferneEierkarton()
     {
 
@@ -41,7 +37,6 @@ class Eierautomat
         scene.remove(gekaufterKarton);
         return gekaufterKarton;
     }
-
 
     synchronized void befülle()
     {

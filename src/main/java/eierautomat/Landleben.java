@@ -3,10 +3,8 @@ package eierautomat;
 import pi.Controller;
 import pi.Scene;
 
-
 class Landleben extends Scene
 {
-
     Landleben()
     {
         Eierautomat automat = new Eierautomat(this);

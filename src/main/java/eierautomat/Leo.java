@@ -7,12 +7,9 @@ import pi.Text;
 
 class Leo extends Thread
 {
-
     Random zufallsgenerator;
 
-
     int anzahlVersuche;
-
 
     Text text;
 
@@ -20,9 +17,7 @@ class Leo extends Thread
 
     Text textVergeblich;
 
-
     Eierautomat automat;
-
 
     Leo(Scene scene, Eierautomat eierautomat)
     {
@@ -37,7 +32,6 @@ class Leo extends Thread
 
         scene.add(text, textVergeblich);
     }
-
 
     @Override
     public void run()
