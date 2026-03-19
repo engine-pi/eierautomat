@@ -18,6 +18,7 @@ class Landleben extends Scene
     public static void main(String[] args)
     {
         Controller.instantMode(false);
-        Controller.start(new Landleben());
+        // Ein Objekt der Klasse Landleben erzeugen und als Parameter der Methode Controller.start() übergeben.
+        // Controller.start();
     }
 }
