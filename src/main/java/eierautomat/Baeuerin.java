@@ -3,16 +3,16 @@ package eierautomat;
 import java.util.Random;
 
 import pi.Scene;
-import pi.Text;
+import pi.actor.Counter;
+import pi.actor.Image;
 
 class Baeuerin extends Thread
 {
-
     Random zufallsgenerator;
 
-    int anzahlVersuche;
+    Counter versuche;
 
-    Text text;
+    Counter vergeblicheVersuche;
 
     Eierautomat automat;
 
@@ -20,10 +20,18 @@ class Baeuerin extends Thread
     {
         automat = eierautomat;
         zufallsgenerator = new Random();
-        text = new Text("");
-        text.center(-10, 2);
-        anzahlVersuche = 0;
-        scene.add(text);
+
+        scene.add(
+            new Image("eierautomat/baeuerin.png", 6, 6).center(-7, 3));
+
+        versuche = new Counter().suffix(". Befüllbesuch");
+        versuche.anchor(-11, -2);
+        scene.add(versuche);
+
+        vergeblicheVersuche = new Counter()
+            .suffix(". vergeblicher Befüllbesuch");
+        vergeblicheVersuche.height(0.8).color("green").anchor(-11, -4);
+        scene.add(vergeblicheVersuche);
     }
 
     @Override
@@ -31,10 +39,15 @@ class Baeuerin extends Thread
     {
         while (true)
         {
-            anzahlVersuche += 1;
-            text.content(anzahlVersuche + ". Befüllbesuch");
+            boolean erfolgreich = automat.befülle();
 
-            automat.befülle();
+            if (!erfolgreich)
+            {
+                vergeblicheVersuche.increase();
+                vergeblicheVersuche.color("red");
+            }
+
+            versuche.increase();
 
             try
             {

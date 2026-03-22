@@ -3,17 +3,17 @@ package eierautomat;
 import java.util.Random;
 
 import pi.Scene;
-import pi.Text;
+import pi.actor.Text;
+import pi.actor.Counter;
+import pi.actor.Image;
 
 class Leo extends Thread
 {
     Random zufallsgenerator;
 
-    int anzahlVersuche;
+    Counter versuche;
 
-    Text text;
-
-    int anzahlVergeblicheVersuche;
+    Counter vergeblicheVersuche;
 
     Text textVergeblich;
 
@@ -24,13 +24,16 @@ class Leo extends Thread
         automat = eierautomat;
         zufallsgenerator = new Random();
 
-        text = new Text("");
-        text.center(3, 2);
+        scene.add(new Image("leo.png", 4, 4).center(6, 3));
 
-        textVergeblich = new Text("");
-        textVergeblich.height(0.8).center(3, 0).color("rot");
+        versuche = new Counter().suffix(". Eierholbesuch");
+        versuche.anchor(3, -2);
+        scene.add(versuche);
 
-        scene.add(text, textVergeblich);
+        vergeblicheVersuche = new Counter()
+            .suffix(". vergeblicher Eierholbesuch");
+        vergeblicheVersuche.height(0.8).anchor(3, -4).color("green");
+        scene.add(vergeblicheVersuche);
     }
 
     @Override
@@ -38,16 +41,14 @@ class Leo extends Thread
     {
         while (true)
         {
-            anzahlVersuche += 1;
-            text.content(anzahlVersuche + ". Eierholbesuch");
-
             Eierkarton karton = automat.holeEier();
+
+            versuche.increase();
 
             if (karton == null)
             {
-                anzahlVergeblicheVersuche++;
-                textVergeblich.content(
-                    anzahlVergeblicheVersuche + ". vergeblicher Eierholbesuch");
+                vergeblicheVersuche.increase();
+                vergeblicheVersuche.color("red");
             }
 
             try

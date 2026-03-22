@@ -10,7 +10,7 @@ class BessererEierautomat extends Eierautomat
     }
 
     @Override
-    synchronized void befülle()
+    synchronized boolean befülle()
     {
         if (eierkartons.size() > 0)
         {
@@ -29,16 +29,15 @@ class BessererEierautomat extends Eierautomat
         }
 
         notify();
+        return true;
     }
 
     @Override
     synchronized Eierkarton holeEier()
     {
-        // Wenn eine bestimmte Bedingung gilt, müssen Abholer abwarten
-        // --- HIER PROGRAMMCODE ERGÄNZEN
-        // --- HINWEIS: Die Bedingung um die folgenden Anweisungen könnte dann
-        // entfernt werden,
-        // --- ebenso die Rückgabe der leeren Referenz.
+        // solange eine bestimmte Bedingung gilt, müssen Abholer abwarten
+        // Die Bedingung um die folgenden Anweisungen könnte dann
+        // entfernt werden, ebenso die Rückgabe der leeren Referenz.
 
         if (eierkartons.size() > 0)
         {
@@ -47,8 +46,7 @@ class BessererEierautomat extends Eierautomat
             Eierkarton gekaufterKarton = entferneEierkarton();
 
             // Unter einer bestimmten Bedingung muss die Bäuerin informiert
-            // werden
-            // --- HIER PROGRAMMCODE ERGÄNZEN
+            // werden.
 
             return gekaufterKarton;
         }

@@ -1,12 +1,11 @@
 package eierautomat;
 
-import pi.Rectangle;
+import pi.actor.Image;
 
-class Eierkarton extends Rectangle
+class Eierkarton extends Image
 {
     Eierkarton()
     {
-        size(3, 0.5);
-        color("gelb");
+        super("eierkarton.png",3, 1.4);
     }
 }
